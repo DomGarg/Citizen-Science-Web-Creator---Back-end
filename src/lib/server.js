@@ -8,6 +8,7 @@ const errorHandler = require('../_helpers/error-handler');
 const fileUpload = require('express-fileupload');
 path = require('path')
 
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -40,7 +41,7 @@ app.get("/fish.jpg", (req, res) => {
 });
 
 // start server
-const port = process.env.NODE_ENV === 'production' ? 80 : 4000;
-const server = app.listen(port , function(){
-    console.log('Server listening on port ' + port);
+//const port = process.env.NODE_ENV === 'production' ? 80 : 4000;
+app.listen(process.env.PORT || 3000 , function(){
+    console.log('Server listening on port ' + process.env.PORT);
 });
